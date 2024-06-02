@@ -1,0 +1,42 @@
+[tool.poetry]
+authors      = ["SpinDance <info@spindance.com>"]
+description  = "Example notebook for modeling cloud infrastructure costs"
+name         = "cost-model-example"
+package-mode = false
+readme       = "README.md"
+version      = "1.0.0"
+
+[tool.poetry.dependencies]
+boto3      = "^1.34.106"
+itables    = "^2.0.1"
+jupyter    = "^1.0.0"
+matplotlib = "^3.9.0"
+polars     = "^0.20.26"
+python     = "^3.12"
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.4.7"
+
+[tool.basedpyright]
+pythonVersion    = "3.12"
+typeCheckingMode = "basic"
+
+[tool.ruff]
+cache-dir      = ".cache/ruff"
+indent-width   = 4
+line-length    = 120
+target-version = "py312"
+
+[tool.ruff.format]
+docstring-code-format = true
+indent-style          = "space"
+quote-style           = "double"
+
+[tool.ruff.lint]
+ignore     = ["COM812", "ISC001"]
+pydocstyle = { convention = "google" }
+select     = ["ALL"]
+
+[build-system]
+build-backend = "poetry.core.masonry.api"
+requires      = ["poetry-core"]
